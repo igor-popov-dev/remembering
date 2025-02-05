@@ -17,6 +17,11 @@
     color: #1f2937;
     font-weight: bold;
     border-radius: 10px;
+
+    background: #1f2937;
+    color: #d1d5db;
+    border: 2px solid #48bbff;
+    ox-shadow: 0 0 10px rgba(72, 187, 255, 0.8), inset 0 0 5px rgba(255, 255, 255, 0.2);
 }
 
 .button:active {

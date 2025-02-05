@@ -29,9 +29,6 @@ export const Main = () => {
 
 	const {
 		phrases,
-		// lists,
-		// feelings,
-		// customListsActivated,
 		currentListId,
 		phraseIndex,
 		questionIndex,
@@ -56,11 +53,6 @@ export const Main = () => {
 	useEffect(() => {
 		dispatch(setQuestionIndex(0));
 	}, [dispatch]);
-	// useEffect(() => {
-	// 	dispatch(setLists(customListsActivated ? customLists : defaultList));
-	// 	dispatch(setFeelings(feelingsItems.map((item) => item.name)));
-	// 	dispatch(setPhrases(defaultList?.[0].phrases));
-	// }, [dispatch, customListsActivated]);
 
 
 	const handleSelectChange = (e:React.ChangeEvent<HTMLSelectElement>) => {
@@ -140,33 +132,6 @@ export const Main = () => {
 	const [showFadeIn, setShowFadeIn] = useState<boolean>(false);
 	const [showFadeOut, setShowFadeOut] = useState<boolean>(false);
 
-	// const [clickCount, setClickCount] = useState(0);
-
-	// const handleHiddenClick = () => {
-	// 	if (!customListsActivated) {
-	// 		setClickCount((prev) => prev + 1);
-	// 	}
-	// };
-
-	// useEffect(() => {
-	// 	let timer: NodeJS.Timeout;
-
-	// 	if (clickCount > 0) {
-	// 		// Устанавливаем таймер для сброса счётчика
-	// 		timer = setTimeout(() => {
-	// 			setClickCount(0);
-	// 		}, 1000); // Сброс через 1 секунду
-	// 	}
-
-	// 	if (clickCount >= 5) {
-	// 		alert('секретный список вопросов активирован!');
-	// 		dispatch(setLists(customLists));
-	// 		dispatch(toggleActivateCustomLists());
-	// 		setClickCount(0);
-	// 	}
-
-	// 	return () => clearTimeout(timer); // Чистим таймер при размонтировании
-	// }, [clickCount, dispatch]);
 
 	return (<>
 		<div className={cn(styles.thxWrapper, {[styles.displayFlex]: showThx}, {[styles.fadeIn]: showFadeIn}, {[styles.fadeOut]: showFadeOut})}>
