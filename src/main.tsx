@@ -27,22 +27,22 @@ const router = createBrowserRouter([
 		element: <Main />
 		
 	},{
-		path: '/training/',
+		path: '/remembering/',
 		element: <Audio />
 		
 	},
 	{
-		path: '/training/final',
+		path: '/remembering/final',
 		element: <Final />
 		
 	},
 	{
-		path: '/training/bad',
+		path: '/remembering/bad',
 		element: <Bad />
 		
 	},
 	{
-		path: '/training/donat',
+		path: '/remembering/donat',
 		element: <Donat />
 		
 	}
