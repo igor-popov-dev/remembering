@@ -10,7 +10,7 @@ import styles from './Audio.module.css';
 
 export const Audio = () => {
 	const [step, setStep] = useState<number>(1)
-	const q1 = `Ты можешь вспомнить другой случай, когда ты был счастлив?`
+	const q1 = `Ты можешь вспомнить случай, когда ты был счастлив?`
 	const q2 = `Что это был за случай?`
 	const q3 = `Какой тембр вы получили во время воспоминания`
 

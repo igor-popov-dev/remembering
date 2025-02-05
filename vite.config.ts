@@ -8,5 +8,5 @@ export default defineConfig({
 		sourcemap: true, // Включите sourcemaps для диагностики
 		minify: false // Проверьте, какое минификационное средство используется
 	},
-	base: '/training/'
+	base: '/remembering/'
 });
