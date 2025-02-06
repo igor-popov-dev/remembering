@@ -205,7 +205,7 @@ export const Audio = () => {
 			</div>
 		</div>
 		<div className={styles.footer} style={{marginTop: 'auto', padding: '20px'}}>
-				<Button onClick={no}>Пропустить вопрос</Button>
+				<Button onClick={no}>Не могу вспомнить<br />Пропустить вопрос</Button>
 				<Button onClick={() => navigate('/training/final')}>Закончить</Button>
 		</div>
 	</div></>
