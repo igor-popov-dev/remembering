@@ -19502,7 +19502,7 @@ const Audio = () => {
         phrases.length
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: styles$6.input, type: "number", pattern: "[0-9]*", min: "1", max: phrases.length, value: phraseIndexInput, onChange: handleChange }),
-      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: styles$6.shuffleButton, onClick: () => navigate("/training/bad"), children: "Если вспоминание некоторых вещей вызвало у вас неприятные ощущения" })
+      /* @__PURE__ */ jsxRuntimeExports.jsx("button", { className: styles$6.shuffleButton, onClick: () => navigate("/remembering/bad"), children: "Если вспоминание некоторых вещей вызвало у вас неприятные ощущения" })
     ] }) }),
     /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$6.wrapper, children: [
       /* @__PURE__ */ jsxRuntimeExports.jsxs("button", { className: styles$6.donat, onClick: goToDonat, children: [
@@ -19542,7 +19542,7 @@ const Audio = () => {
           /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
           "Пропустить вопрос"
         ] }),
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { onClick: () => navigate("/training/final"), children: "Закончить" })
+        /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { onClick: () => navigate("/remembering/final"), children: "Закончить" })
       ] })
     ] })
   ] });
@@ -19743,7 +19743,7 @@ const Bad = () => {
   return /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$3.wrapper, children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: styles$3.h1, children: "Вспомните все эти случаи еще раз со всеми доступными вам ощущениями." }),
     /* @__PURE__ */ jsxRuntimeExports.jsx("div", { className: styles$3.content, children: /* @__PURE__ */ jsxRuntimeExports.jsx(Accordion, {}) }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { onClick: () => navigate("/training/"), children: "На главную" })
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { onClick: () => navigate("/remembering/"), children: "На главную" })
   ] });
 };
 const h1$2 = "_h1_1wykr_1";
@@ -21092,4 +21092,4 @@ const router = createBrowserRouter([
 clientExports.createRoot(document.getElementById("root")).render(
   /* @__PURE__ */ jsxRuntimeExports.jsx(reactExports.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Provider_default, { store, children: /* @__PURE__ */ jsxRuntimeExports.jsx(RouterProvider2, { router }) }) })
 );
-//# sourceMappingURL=index-B0lO7xuy.js.map
+//# sourceMappingURL=index-C27C0mZp.js.map
