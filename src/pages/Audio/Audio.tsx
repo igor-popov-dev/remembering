@@ -203,7 +203,7 @@ export const Audio = () => {
 				Сделай донат
 		</button>
 		<input className={styles.input} type="range" min="1" max={phrases.length} step="1" value={phraseIndexInput || 0} onChange={handleChange}></input>
-		<h1 className={styles.h2}>Вопрос {`${phraseIndex + 1}: ${phrases[phraseIndex]}`}</h1>
+		<h1 className={styles.h2}>{`${phraseIndex + 1}. ${phrases[phraseIndex]}`}</h1>
 		<div className={cn(styles.step, {[styles.show]: step === 1 })}>
 			<h1 className={styles.h1}>{q1}</h1>
 			<div className={styles.btnWrapper}>

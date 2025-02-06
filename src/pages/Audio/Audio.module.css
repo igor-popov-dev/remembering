@@ -360,6 +360,8 @@
       line-height: 1.6;
       box-shadow: none;
       position: relative;
+      margin-left: auto;
+      margin-right: auto;
     }
 
 .buttons {
