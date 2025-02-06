@@ -15918,32 +15918,32 @@ const feelingsItems = [
   { name: "Вес", description: "тяжесть вещей, включая силу притяжения, и вес всего того, что ты мог действительно поддерживать во время случая, например, твоей одежды, мяча или любых других вещей, которые ты действительно держал во время случая.", question: "Какой вес вы получили во время воспоминания" },
   { name: "Свое движение", description: "движение, которое во время события предпринимал ты сам.", question: "Какое свое движение вы получили во время воспоминания" }
 ];
-const fadeIn$1 = "_fadeIn_1otka_43";
-const fadeOut$1 = "_fadeOut_1otka_47";
-const wrapper$4 = "_wrapper_1otka_51";
-const thxWrapper$1 = "_thxWrapper_1otka_51";
-const displayFlex$1 = "_displayFlex_1otka_77";
-const h1$4 = "_h1_1otka_81";
-const h2$1 = "_h2_1otka_113";
-const h3$1 = "_h3_1otka_133";
-const randomize$1 = "_randomize_1otka_144";
-const text$1 = "_text_1otka_148";
-const thxText$1 = "_thxText_1otka_148";
-const input$1 = "_input_1otka_161";
-const theme$1 = "_theme_1otka_240";
-const select$1 = "_select_1otka_245";
-const defenition$1 = "_defenition_1otka_307";
-const buttons$1 = "_buttons_1otka_365";
-const shuffleButton$1 = "_shuffleButton_1otka_371";
-const active$2 = "_active_1otka_400";
-const donat$1 = "_donat_1otka_433";
-const secret$2 = "_secret_1otka_451";
-const btnWrapper = "_btnWrapper_1otka_460";
-const container = "_container_1otka_467";
-const step = "_step_1otka_471";
-const show = "_show_1otka_476";
-const footer = "_footer_1otka_482";
-const autoplay = "_autoplay_1otka_496";
+const fadeIn$1 = "_fadeIn_1tad6_43";
+const fadeOut$1 = "_fadeOut_1tad6_47";
+const wrapper$4 = "_wrapper_1tad6_51";
+const thxWrapper$1 = "_thxWrapper_1tad6_51";
+const displayFlex$1 = "_displayFlex_1tad6_77";
+const h1$4 = "_h1_1tad6_81";
+const h2$1 = "_h2_1tad6_113";
+const h3$1 = "_h3_1tad6_133";
+const randomize$1 = "_randomize_1tad6_144";
+const text$1 = "_text_1tad6_148";
+const thxText$1 = "_thxText_1tad6_148";
+const input$1 = "_input_1tad6_161";
+const theme$1 = "_theme_1tad6_240";
+const select$1 = "_select_1tad6_245";
+const defenition$1 = "_defenition_1tad6_307";
+const buttons$1 = "_buttons_1tad6_367";
+const shuffleButton$1 = "_shuffleButton_1tad6_373";
+const active$2 = "_active_1tad6_402";
+const donat$1 = "_donat_1tad6_435";
+const secret$2 = "_secret_1tad6_453";
+const btnWrapper = "_btnWrapper_1tad6_462";
+const container = "_container_1tad6_469";
+const step = "_step_1tad6_473";
+const show = "_show_1tad6_478";
+const footer = "_footer_1tad6_484";
+const autoplay = "_autoplay_1tad6_498";
 const styles$6 = {
   fadeIn: fadeIn$1,
   fadeOut: fadeOut$1,
@@ -15962,7 +15962,7 @@ const styles$6 = {
   defenition: defenition$1,
   buttons: buttons$1,
   shuffleButton: shuffleButton$1,
-  "shuffle-button": "_shuffle-button_1otka_400",
+  "shuffle-button": "_shuffle-button_1tad6_402",
   active: active$2,
   donat: donat$1,
   secret: secret$2,
@@ -15972,7 +15972,7 @@ const styles$6 = {
   show,
   footer,
   autoplay,
-  "neon-flicker": "_neon-flicker_1otka_1"
+  "neon-flicker": "_neon-flicker_1tad6_1"
 };
 const button = "_button_k543b_1";
 const small = "_small_k543b_31";
@@ -19534,10 +19534,7 @@ const Audio = () => {
         "Сделай донат"
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("input", { className: styles$6.input, type: "range", min: "1", max: phrases.length, step: "1", value: phraseIndexInput || 0, onChange: handleChange }),
-      /* @__PURE__ */ jsxRuntimeExports.jsxs("h1", { className: styles$6.h2, children: [
-        "Вопрос ",
-        `${phraseIndex + 1}: ${phrases[phraseIndex]}`
-      ] }),
+      /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: styles$6.h2, children: `${phraseIndex + 1}. ${phrases[phraseIndex]}` }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: cn(styles$6.step, { [styles$6.show]: step2 === 1 }), children: [
         /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: styles$6.h1, children: q1 }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$6.btnWrapper, children: [
@@ -21121,4 +21118,4 @@ const router = createBrowserRouter([
 clientExports.createRoot(document.getElementById("root")).render(
   /* @__PURE__ */ jsxRuntimeExports.jsx(reactExports.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Provider_default, { store, children: /* @__PURE__ */ jsxRuntimeExports.jsx(RouterProvider2, { router }) }) })
 );
-//# sourceMappingURL=index-BAqdLOCj.js.map
+//# sourceMappingURL=index-DMIn9tO8.js.map
