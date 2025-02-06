@@ -1,7 +1,7 @@
 {
-  "name": "Самоанализ",
+  "name": "Самоанализ v2",
   "description": "Приложение для самоанализа",
-  "start_url": "https://igor-popov-dev.github.io/training/",
+  "start_url": "https://igor-popov-dev.github.io/remembering/",
   "lang": "ru-RU",
   "theme_color": "#0d1117",
   "display": "standalone",
