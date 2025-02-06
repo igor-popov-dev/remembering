@@ -19470,6 +19470,9 @@ const Audio = () => {
     dispatch(nextQuestionIndex());
   };
   const no = async () => {
+    if (autoplay2) {
+      sayThx();
+    }
     setStep(1);
     dispatch(goToNextPhrase());
   };
@@ -21118,4 +21121,4 @@ const router = createBrowserRouter([
 clientExports.createRoot(document.getElementById("root")).render(
   /* @__PURE__ */ jsxRuntimeExports.jsx(reactExports.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Provider_default, { store, children: /* @__PURE__ */ jsxRuntimeExports.jsx(RouterProvider2, { router }) }) })
 );
-//# sourceMappingURL=index-BKJxhw_J.js.map
+//# sourceMappingURL=index-DzCFQjXH.js.map
