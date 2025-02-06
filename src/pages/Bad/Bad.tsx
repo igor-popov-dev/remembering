@@ -11,7 +11,7 @@ export const Bad = () => {
 			<div className={styles.content}>
 				<Accordion />
 			</div>
-			<Button  onClick={() => navigate('/training/')}>На главную</Button>
+			<Button  onClick={() => navigate('/remembering/')}>На главную</Button>
 		</div>
 	);
 };

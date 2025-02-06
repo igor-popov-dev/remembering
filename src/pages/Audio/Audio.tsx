@@ -142,10 +142,12 @@ export const Audio = () => {
 		utterance.lang = "ru-RU";
 		window.speechSynthesis.speak(utterance);
   	};
-	// const sayThx = () => speakText('Спасибо');
+	const sayThx = () => speakText('Спасибо');
 
 	const nextStep = (nextStep: number) => {
-		// sayThx();
+		if (autoplay) {
+			sayThx();
+		}
 		if ( nextStep === 1) {
 			yes();
 		}
@@ -154,11 +156,28 @@ export const Audio = () => {
 	}
 
 	useEffect(()=>{
-		setQ1(`${currentTitle} ${phrases[phraseIndex]}`)
+		const currentQ = `${currentTitle} ${phrases[phraseIndex]}`
+		setQ1(currentQ)
+		if (step === 1 && autoplay) {
+				speakText(currentQ);
+		}
 	}, [currentTitle, phraseIndex]);
 	useEffect(()=>{
 		setQ3(`${feelingsItems[feelingIndex].question}`)
 	}, [feelingIndex]);
+
+	const [autoplay, setAutoplay] = useState(false)
+
+	useEffect(() => {
+		if (autoplay) {
+			if (step === 2) {
+				speakText(q2);
+			}
+			if (step === 3) {
+				speakText(q3);
+			}
+		}
+	}, [autoplay, step, phraseIndex]);
 	return <>
 		{/* <div className={cn(styles.thxWrapper, {[styles.displayFlex]: showThx}, {[styles.fadeIn]: showFadeIn}, {[styles.fadeOut]: showFadeOut})}>
 			<h2 className={styles.thxText}>Спасибо!</h2>
@@ -170,7 +189,7 @@ export const Audio = () => {
 				</select>
 				<div className={styles.text}>всего карточек в списке: {phrases.length}</div>
 				<input className={styles.input} type="number" pattern="[0-9]*" min="1" max={phrases.length} value={phraseIndexInput} onChange={handleChange}/>
-				<button className={styles.shuffleButton} onClick={()=>navigate('/training/bad')}>Если вспоминание некоторых вещей вызвало у вас неприятные ощущения</button>
+				<button className={styles.shuffleButton} onClick={()=>navigate('/remembering/bad')}>Если вспоминание некоторых вещей вызвало у вас неприятные ощущения</button>
 			</div>
 		</Header>
 	<div className={styles.wrapper}>
@@ -205,8 +224,13 @@ export const Audio = () => {
 			</div>
 		</div>
 		<div className={styles.footer} style={{marginTop: 'auto', padding: '20px'}}>
+				<label className={styles.autoplay}>
+					<input type="checkbox" checked={autoplay} onChange={() => setAutoplay(value => !value)}/>
+					<img src="sound.svg" alt="звук" width={20} />
+					autoplay
+					</label>
 				<Button onClick={no}>Не могу вспомнить<br />Пропустить вопрос</Button>
-				<Button onClick={() => navigate('/training/final')}>Закончить</Button>
+				<Button onClick={() => navigate('/remembering/final')}>Закончить</Button>
 		</div>
 	</div></>
 };
