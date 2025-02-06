@@ -117,6 +117,7 @@ export const Audio = () => {
 	};
 
 	const no = async () => {
+		setStep(1);
 		dispatch(goToNextPhrase());
 	};
 
