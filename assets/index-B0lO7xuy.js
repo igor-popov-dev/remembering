@@ -19537,7 +19537,11 @@ const Audio = () => {
         ] })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$6.footer, style: { marginTop: "auto", padding: "20px" }, children: [
-        /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { onClick: no, children: "Пропустить вопрос" }),
+        /* @__PURE__ */ jsxRuntimeExports.jsxs(Button, { onClick: no, children: [
+          "Не могу вспомнить",
+          /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
+          "Пропустить вопрос"
+        ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { onClick: () => navigate("/training/final"), children: "Закончить" })
       ] })
     ] })
@@ -21088,4 +21092,4 @@ const router = createBrowserRouter([
 clientExports.createRoot(document.getElementById("root")).render(
   /* @__PURE__ */ jsxRuntimeExports.jsx(reactExports.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Provider_default, { store, children: /* @__PURE__ */ jsxRuntimeExports.jsx(RouterProvider2, { router }) }) })
 );
-//# sourceMappingURL=index-Cz54KOxH.js.map
+//# sourceMappingURL=index-B0lO7xuy.js.map
