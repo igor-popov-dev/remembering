@@ -15918,32 +15918,32 @@ const feelingsItems = [
   { name: "Вес", description: "тяжесть вещей, включая силу притяжения, и вес всего того, что ты мог действительно поддерживать во время случая, например, твоей одежды, мяча или любых других вещей, которые ты действительно держал во время случая.", question: "Какой вес вы получили во время воспоминания" },
   { name: "Свое движение", description: "движение, которое во время события предпринимал ты сам.", question: "Какое свое движение вы получили во время воспоминания" }
 ];
-const fadeIn$1 = "_fadeIn_hojuq_43";
-const fadeOut$1 = "_fadeOut_hojuq_47";
-const wrapper$4 = "_wrapper_hojuq_51";
-const thxWrapper$1 = "_thxWrapper_hojuq_51";
-const displayFlex$1 = "_displayFlex_hojuq_77";
-const h1$4 = "_h1_hojuq_81";
-const h2$1 = "_h2_hojuq_113";
-const h3$1 = "_h3_hojuq_133";
-const randomize$1 = "_randomize_hojuq_144";
-const text$1 = "_text_hojuq_148";
-const thxText$1 = "_thxText_hojuq_148";
-const input$1 = "_input_hojuq_161";
-const theme$1 = "_theme_hojuq_240";
-const select$1 = "_select_hojuq_245";
-const defenition$1 = "_defenition_hojuq_307";
-const buttons$1 = "_buttons_hojuq_365";
-const shuffleButton$1 = "_shuffleButton_hojuq_371";
-const active$2 = "_active_hojuq_400";
-const donat$1 = "_donat_hojuq_433";
-const secret$2 = "_secret_hojuq_451";
-const btnWrapper = "_btnWrapper_hojuq_460";
-const container = "_container_hojuq_467";
-const step = "_step_hojuq_471";
-const show = "_show_hojuq_476";
-const footer = "_footer_hojuq_482";
-const autoplay = "_autoplay_hojuq_496";
+const fadeIn$1 = "_fadeIn_1s2zo_43";
+const fadeOut$1 = "_fadeOut_1s2zo_47";
+const wrapper$4 = "_wrapper_1s2zo_51";
+const thxWrapper$1 = "_thxWrapper_1s2zo_51";
+const displayFlex$1 = "_displayFlex_1s2zo_77";
+const h1$4 = "_h1_1s2zo_81";
+const h2$1 = "_h2_1s2zo_113";
+const h3$1 = "_h3_1s2zo_133";
+const randomize$1 = "_randomize_1s2zo_144";
+const text$1 = "_text_1s2zo_148";
+const thxText$1 = "_thxText_1s2zo_148";
+const input$1 = "_input_1s2zo_161";
+const theme$1 = "_theme_1s2zo_240";
+const select$1 = "_select_1s2zo_245";
+const defenition$1 = "_defenition_1s2zo_307";
+const buttons$1 = "_buttons_1s2zo_365";
+const shuffleButton$1 = "_shuffleButton_1s2zo_371";
+const active$2 = "_active_1s2zo_400";
+const donat$1 = "_donat_1s2zo_433";
+const secret$2 = "_secret_1s2zo_451";
+const btnWrapper = "_btnWrapper_1s2zo_460";
+const container = "_container_1s2zo_467";
+const step = "_step_1s2zo_471";
+const show = "_show_1s2zo_476";
+const footer = "_footer_1s2zo_482";
+const autoplay = "_autoplay_1s2zo_496";
 const styles$6 = {
   fadeIn: fadeIn$1,
   fadeOut: fadeOut$1,
@@ -15962,7 +15962,7 @@ const styles$6 = {
   defenition: defenition$1,
   buttons: buttons$1,
   shuffleButton: shuffleButton$1,
-  "shuffle-button": "_shuffle-button_hojuq_400",
+  "shuffle-button": "_shuffle-button_1s2zo_400",
   active: active$2,
   donat: donat$1,
   secret: secret$2,
@@ -15972,7 +15972,7 @@ const styles$6 = {
   show,
   footer,
   autoplay,
-  "neon-flicker": "_neon-flicker_hojuq_1"
+  "neon-flicker": "_neon-flicker_1s2zo_1"
 };
 const button = "_button_k543b_1";
 const small = "_small_k543b_31";
@@ -21121,4 +21121,4 @@ const router = createBrowserRouter([
 clientExports.createRoot(document.getElementById("root")).render(
   /* @__PURE__ */ jsxRuntimeExports.jsx(reactExports.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Provider_default, { store, children: /* @__PURE__ */ jsxRuntimeExports.jsx(RouterProvider2, { router }) }) })
 );
-//# sourceMappingURL=index-DzCFQjXH.js.map
+//# sourceMappingURL=index-B6U5ZWV1.js.map
