@@ -19468,6 +19468,7 @@ const Audio = () => {
     dispatch(nextQuestionIndex());
   };
   const no = async () => {
+    setStep(1);
     dispatch(goToNextPhrase());
   };
   const goToDonat = () => {
@@ -21087,4 +21088,4 @@ const router = createBrowserRouter([
 clientExports.createRoot(document.getElementById("root")).render(
   /* @__PURE__ */ jsxRuntimeExports.jsx(reactExports.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Provider_default, { store, children: /* @__PURE__ */ jsxRuntimeExports.jsx(RouterProvider2, { router }) }) })
 );
-//# sourceMappingURL=index-BoT-tDNe.js.map
+//# sourceMappingURL=index-Cz54KOxH.js.map
