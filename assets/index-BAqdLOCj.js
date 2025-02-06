@@ -20912,7 +20912,7 @@ const Final = () => {
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsx("p", { className: styles$1.note, children: "Проходите этот список снова и снова, пока вы не почувствуете себя бодрым в отношении вашего непосредственного окружения." })
     ] }),
-    /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { onClick: () => navigate("/training/"), children: "На главную" })
+    /* @__PURE__ */ jsxRuntimeExports.jsx(Button, { onClick: () => navigate("/remembering/"), children: "На главную" })
   ] });
 };
 const fadeIn = "_fadeIn_z1aca_43";
@@ -21121,4 +21121,4 @@ const router = createBrowserRouter([
 clientExports.createRoot(document.getElementById("root")).render(
   /* @__PURE__ */ jsxRuntimeExports.jsx(reactExports.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Provider_default, { store, children: /* @__PURE__ */ jsxRuntimeExports.jsx(RouterProvider2, { router }) }) })
 );
-//# sourceMappingURL=index-Cnm2155i.js.map
+//# sourceMappingURL=index-BAqdLOCj.js.map
