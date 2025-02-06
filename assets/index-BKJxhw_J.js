@@ -15918,31 +15918,32 @@ const feelingsItems = [
   { name: "Вес", description: "тяжесть вещей, включая силу притяжения, и вес всего того, что ты мог действительно поддерживать во время случая, например, твоей одежды, мяча или любых других вещей, которые ты действительно держал во время случая.", question: "Какой вес вы получили во время воспоминания" },
   { name: "Свое движение", description: "движение, которое во время события предпринимал ты сам.", question: "Какое свое движение вы получили во время воспоминания" }
 ];
-const fadeIn$1 = "_fadeIn_323pk_43";
-const fadeOut$1 = "_fadeOut_323pk_47";
-const wrapper$4 = "_wrapper_323pk_51";
-const thxWrapper$1 = "_thxWrapper_323pk_51";
-const displayFlex$1 = "_displayFlex_323pk_77";
-const h1$4 = "_h1_323pk_81";
-const h2$1 = "_h2_323pk_113";
-const h3$1 = "_h3_323pk_133";
-const randomize$1 = "_randomize_323pk_144";
-const text$1 = "_text_323pk_148";
-const thxText$1 = "_thxText_323pk_148";
-const input$1 = "_input_323pk_161";
-const theme$1 = "_theme_323pk_240";
-const select$1 = "_select_323pk_245";
-const defenition$1 = "_defenition_323pk_307";
-const buttons$1 = "_buttons_323pk_365";
-const shuffleButton$1 = "_shuffleButton_323pk_371";
-const active$2 = "_active_323pk_400";
-const donat$1 = "_donat_323pk_433";
-const secret$2 = "_secret_323pk_451";
-const btnWrapper = "_btnWrapper_323pk_460";
-const container = "_container_323pk_467";
-const step = "_step_323pk_471";
-const show = "_show_323pk_476";
-const footer = "_footer_323pk_482";
+const fadeIn$1 = "_fadeIn_hojuq_43";
+const fadeOut$1 = "_fadeOut_hojuq_47";
+const wrapper$4 = "_wrapper_hojuq_51";
+const thxWrapper$1 = "_thxWrapper_hojuq_51";
+const displayFlex$1 = "_displayFlex_hojuq_77";
+const h1$4 = "_h1_hojuq_81";
+const h2$1 = "_h2_hojuq_113";
+const h3$1 = "_h3_hojuq_133";
+const randomize$1 = "_randomize_hojuq_144";
+const text$1 = "_text_hojuq_148";
+const thxText$1 = "_thxText_hojuq_148";
+const input$1 = "_input_hojuq_161";
+const theme$1 = "_theme_hojuq_240";
+const select$1 = "_select_hojuq_245";
+const defenition$1 = "_defenition_hojuq_307";
+const buttons$1 = "_buttons_hojuq_365";
+const shuffleButton$1 = "_shuffleButton_hojuq_371";
+const active$2 = "_active_hojuq_400";
+const donat$1 = "_donat_hojuq_433";
+const secret$2 = "_secret_hojuq_451";
+const btnWrapper = "_btnWrapper_hojuq_460";
+const container = "_container_hojuq_467";
+const step = "_step_hojuq_471";
+const show = "_show_hojuq_476";
+const footer = "_footer_hojuq_482";
+const autoplay = "_autoplay_hojuq_496";
 const styles$6 = {
   fadeIn: fadeIn$1,
   fadeOut: fadeOut$1,
@@ -15961,7 +15962,7 @@ const styles$6 = {
   defenition: defenition$1,
   buttons: buttons$1,
   shuffleButton: shuffleButton$1,
-  "shuffle-button": "_shuffle-button_323pk_400",
+  "shuffle-button": "_shuffle-button_hojuq_400",
   active: active$2,
   donat: donat$1,
   secret: secret$2,
@@ -15970,7 +15971,8 @@ const styles$6 = {
   step,
   show,
   footer,
-  "neon-flicker": "_neon-flicker_323pk_1"
+  autoplay,
+  "neon-flicker": "_neon-flicker_hojuq_1"
 };
 const button = "_button_k543b_1";
 const small = "_small_k543b_31";
@@ -19482,18 +19484,37 @@ const Audio = () => {
     utterance.lang = "ru-RU";
     window.speechSynthesis.speak(utterance);
   };
+  const sayThx = () => speakText("Спасибо");
   const nextStep = (nextStep2) => {
+    if (autoplay2) {
+      sayThx();
+    }
     if (nextStep2 === 1) {
       yes();
     }
     setStep(nextStep2);
   };
   reactExports.useEffect(() => {
-    setQ1(`${currentTitle} ${phrases[phraseIndex]}`);
+    const currentQ = `${currentTitle} ${phrases[phraseIndex]}`;
+    setQ1(currentQ);
+    if (step2 === 1 && autoplay2) {
+      speakText(currentQ);
+    }
   }, [currentTitle, phraseIndex]);
   reactExports.useEffect(() => {
     setQ3(`${feelingsItems[feelingIndex].question}`);
   }, [feelingIndex]);
+  const [autoplay2, setAutoplay] = reactExports.useState(false);
+  reactExports.useEffect(() => {
+    if (autoplay2) {
+      if (step2 === 2) {
+        speakText(q2);
+      }
+      if (step2 === 3) {
+        speakText(q3);
+      }
+    }
+  }, [autoplay2, step2, phraseIndex]);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Header, { title: `Cписок: ${((_a2 = lists.find((item) => item.id === currentListId)) == null ? void 0 : _a2.theme) ?? ""}`, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$6.theme, children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("select", { className: styles$6.select, onChange: handleSelectChange, value: currentListId, children: lists.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: item.id, children: item.theme }, item.id)) }),
@@ -19537,6 +19558,11 @@ const Audio = () => {
         ] })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$6.footer, style: { marginTop: "auto", padding: "20px" }, children: [
+        /* @__PURE__ */ jsxRuntimeExports.jsxs("label", { className: styles$6.autoplay, children: [
+          /* @__PURE__ */ jsxRuntimeExports.jsx("input", { type: "checkbox", checked: autoplay2, onChange: () => setAutoplay((value) => !value) }),
+          /* @__PURE__ */ jsxRuntimeExports.jsx("img", { src: "sound.svg", alt: "звук", width: 20 }),
+          "autoplay"
+        ] }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs(Button, { onClick: no, children: [
           "Не могу вспомнить",
           /* @__PURE__ */ jsxRuntimeExports.jsx("br", {}),
@@ -21092,4 +21118,4 @@ const router = createBrowserRouter([
 clientExports.createRoot(document.getElementById("root")).render(
   /* @__PURE__ */ jsxRuntimeExports.jsx(reactExports.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Provider_default, { store, children: /* @__PURE__ */ jsxRuntimeExports.jsx(RouterProvider2, { router }) }) })
 );
-//# sourceMappingURL=index-C27C0mZp.js.map
+//# sourceMappingURL=index-BKJxhw_J.js.map
