@@ -117,6 +117,9 @@ export const Audio = () => {
 	};
 
 	const no = async () => {
+		if (autoplay) {
+			sayThx();
+		}
 		setStep(1);
 		dispatch(goToNextPhrase());
 	};
