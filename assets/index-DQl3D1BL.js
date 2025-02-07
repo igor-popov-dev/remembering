@@ -19480,7 +19480,7 @@ const Audio = () => {
     const url2 = "https://www.donationalerts.com/r/devforsoul";
     window.open(url2, "_blank");
   };
-  const q2 = `Что это был за случай?`;
+  const q2 = `Что это было?`;
   const speakText = (q) => {
     if (!q.trim()) return;
     const utterance = new SpeechSynthesisUtterance(q);
@@ -21118,4 +21118,4 @@ const router = createBrowserRouter([
 clientExports.createRoot(document.getElementById("root")).render(
   /* @__PURE__ */ jsxRuntimeExports.jsx(reactExports.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Provider_default, { store, children: /* @__PURE__ */ jsxRuntimeExports.jsx(RouterProvider2, { router }) }) })
 );
-//# sourceMappingURL=index-DMIn9tO8.js.map
+//# sourceMappingURL=index-DQl3D1BL.js.map
