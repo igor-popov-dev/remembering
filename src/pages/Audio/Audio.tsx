@@ -208,7 +208,7 @@ export const Audio = () => {
 			<h1 className={styles.h1}>{q1}</h1>
 			<div className={styles.btnWrapper}>
 				<ActionBtn type='play' onClick={() => speakText(q1)} />
-				<ActionBtn disabled={step !== 1} type='done' onClick={() => nextStep(2)}/>
+				<ActionBtn disabled={step !== 1} type='done' onClick={() => nextStep(3)}/>
 			</div>
 		</div>
 		<div className={cn(styles.step,{[styles.show]: step === 2 })}>
