@@ -19539,7 +19539,7 @@ const Audio = () => {
         /* @__PURE__ */ jsxRuntimeExports.jsx("h1", { className: styles$6.h1, children: q1 }),
         /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$6.btnWrapper, children: [
           /* @__PURE__ */ jsxRuntimeExports.jsx(ActionBtn, { type: "play", onClick: () => speakText(q1) }),
-          /* @__PURE__ */ jsxRuntimeExports.jsx(ActionBtn, { disabled: step2 !== 1, type: "done", onClick: () => nextStep(2) })
+          /* @__PURE__ */ jsxRuntimeExports.jsx(ActionBtn, { disabled: step2 !== 1, type: "done", onClick: () => nextStep(3) })
         ] })
       ] }),
       /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: cn(styles$6.step, { [styles$6.show]: step2 === 2 }), children: [
@@ -21118,4 +21118,4 @@ const router = createBrowserRouter([
 clientExports.createRoot(document.getElementById("root")).render(
   /* @__PURE__ */ jsxRuntimeExports.jsx(reactExports.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Provider_default, { store, children: /* @__PURE__ */ jsxRuntimeExports.jsx(RouterProvider2, { router }) }) })
 );
-//# sourceMappingURL=index-DQl3D1BL.js.map
+//# sourceMappingURL=index-BTyoAL7Y.js.map
