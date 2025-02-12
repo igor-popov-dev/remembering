@@ -15905,7 +15905,7 @@ const Header = ({ children, title }) => {
   ] });
 };
 const feelingsItems = [
-  { name: "Вид", description: "то, что ты действительно видел в то время, когда случай имел место.", question: "Какой вид вы получили во время воспоминания" },
+  { name: "Вид", description: "то, что ты действительно видел в то время, когда случай имел место.", question: "Какой вид ты получил во время воспоминания" },
   { name: "Запах", description: "запахи, которые присутствовали во время ситуации, которую ты вспоминаешь.", question: "Какой запах ты получил во время воспоминания" },
   { name: "Осязание", description: "все, что угодно, что ты действительно осязал в то время, включая давление.", question: "Какое осязание ты получил во время воспоминания" },
   { name: "Цвет", description: "действительный цвет, который содержался в требуемом случае.", question: "Какой цвет ты получил во время воспоминания" },
@@ -21118,4 +21118,4 @@ const router = createBrowserRouter([
 clientExports.createRoot(document.getElementById("root")).render(
   /* @__PURE__ */ jsxRuntimeExports.jsx(reactExports.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Provider_default, { store, children: /* @__PURE__ */ jsxRuntimeExports.jsx(RouterProvider2, { router }) }) })
 );
-//# sourceMappingURL=index-C-z63MES.js.map
+//# sourceMappingURL=index-BKP9CgJ4.js.map
