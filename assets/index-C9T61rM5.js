@@ -19485,6 +19485,7 @@ const Audio = () => {
     if (!q.trim()) return;
     const utterance = new SpeechSynthesisUtterance(q);
     utterance.lang = "ru-RU";
+    utterance.rate = 1;
     window.speechSynthesis.speak(utterance);
   };
   const sayThx = () => speakText("Спасибо");
@@ -21118,4 +21119,4 @@ const router = createBrowserRouter([
 clientExports.createRoot(document.getElementById("root")).render(
   /* @__PURE__ */ jsxRuntimeExports.jsx(reactExports.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Provider_default, { store, children: /* @__PURE__ */ jsxRuntimeExports.jsx(RouterProvider2, { router }) }) })
 );
-//# sourceMappingURL=index-BKP9CgJ4.js.map
+//# sourceMappingURL=index-C9T61rM5.js.map
