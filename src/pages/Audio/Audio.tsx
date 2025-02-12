@@ -143,6 +143,7 @@ export const Audio = () => {
 
 		const utterance = new SpeechSynthesisUtterance(q);
 		utterance.lang = "ru-RU";
+		utterance.rate = 1.0;
 		window.speechSynthesis.speak(utterance);
   	};
 	const sayThx = () => speakText('Спасибо');
