@@ -27,7 +27,7 @@ import { AppDispatch, RootState } from '../../store/store';
 
 
 export const Audio = () => {
-	const [step, setStep] = useState<number>(1)
+	const [step, setStep] = useState<number>(1);
 	const [q1, setQ1] = useState('');
 	const [q3, setQ3] = useState('');
 
@@ -117,6 +117,7 @@ export const Audio = () => {
 	};
 
 	const no = async () => {
+		window.speechSynthesis.cancel();
 		if (autoplay) {
 			sayThx();
 		}
@@ -135,20 +136,21 @@ export const Audio = () => {
 
 
 	// const q1 = `Ты можешь вспомнить случай, когда Ты только что закончил собирать, строить что-то.`
-	const q2 = `Что это было?`
+	const q2 = 'Что это было?';
 	// const q3 = `Какой тембр вы получили во время воспоминания`
 
 	const speakText = (q: string) => {
 		if (!q.trim()) return;
 
 		const utterance = new SpeechSynthesisUtterance(q);
-		utterance.lang = "ru-RU";
+		utterance.lang = 'ru-RU';
 		utterance.rate = 1.0;
 		window.speechSynthesis.speak(utterance);
   	};
 	const sayThx = () => speakText('Спасибо');
 
 	const nextStep = (nextStep: number) => {
+		window.speechSynthesis.cancel();
 		if (autoplay) {
 			sayThx();
 		}
@@ -157,20 +159,20 @@ export const Audio = () => {
 		}
 		setStep(nextStep);
 
-	}
+	};
 
 	useEffect(()=>{
-		const currentQ = `${currentTitle} ${phrases[phraseIndex]}`
-		setQ1(currentQ)
+		const currentQ = `${currentTitle} ${phrases[phraseIndex]}`;
+		setQ1(currentQ);
 		if (step === 1 && autoplay) {
-				speakText(currentQ);
+			speakText(currentQ);
 		}
 	}, [currentTitle, phraseIndex]);
 	useEffect(()=>{
-		setQ3(`${feelingsItems[feelingIndex].question}`)
+		setQ3(`${feelingsItems[feelingIndex].question}`);
 	}, [feelingIndex]);
 
-	const [autoplay, setAutoplay] = useState(false)
+	const [autoplay, setAutoplay] = useState(true);
 
 	useEffect(() => {
 		if (autoplay) {
@@ -182,6 +184,30 @@ export const Audio = () => {
 			}
 		}
 	}, [autoplay, step, phraseIndex]);
+
+	useEffect(() => {
+		const handleKeyDown = (event: KeyboardEvent) => {
+			if (event.key === 'ArrowDown') {
+				console.log('event.key === \'ArrowDown\'');
+				no();
+			} else if (event.key === 'ArrowRight') {
+				console.log('event.key === \'ArrowRight\'');
+				if (step === 1) {
+					nextStep(3);
+				} else {
+					nextStep(1);
+				}
+			}
+		};
+
+		document.addEventListener('keydown', handleKeyDown);
+
+		// Удаляем обработчик при размонтировании компонента
+		return () => {
+			document.removeEventListener('keydown', handleKeyDown);
+		};
+	}, [step]);
+
 	return <>
 		{/* <div className={cn(styles.thxWrapper, {[styles.displayFlex]: showThx}, {[styles.fadeIn]: showFadeIn}, {[styles.fadeOut]: showFadeOut})}>
 			<h2 className={styles.thxText}>Спасибо!</h2>
@@ -196,45 +222,45 @@ export const Audio = () => {
 				<button className={styles.shuffleButton} onClick={()=>navigate('/remembering/bad')}>Если вспоминание некоторых вещей вызвало у вас неприятные ощущения</button>
 			</div>
 		</Header>
-	<div className={styles.wrapper}>
-		<button className={styles.donat} onClick={goToDonat}>
-			<svg width="16px" height="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-				<path fillRule="evenodd" clipRule="evenodd" d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z" stroke="#750000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-			</svg>
+		<div className={styles.wrapper}>
+			<button className={styles.donat} onClick={goToDonat}>
+				<svg width="16px" height="16px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+					<path fillRule="evenodd" clipRule="evenodd" d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z" stroke="#750000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+				</svg>
 				Сделай донат
-		</button>
-		<input className={styles.input} type="range" min="1" max={phrases.length} step="1" value={phraseIndexInput || 0} onChange={handleChange}></input>
-		<h1 className={styles.h2}>{`${phraseIndex + 1}. ${phrases[phraseIndex]}`}</h1>
-		<div className={cn(styles.step, {[styles.show]: step === 1 })}>
-			<h1 className={styles.h1}>{q1}</h1>
-			<div className={styles.btnWrapper}>
-				<ActionBtn type='play' onClick={() => speakText(q1)} />
-				<ActionBtn disabled={step !== 1} type='done' onClick={() => nextStep(3)}/>
+			</button>
+			<input className={styles.input} type="range" min="1" max={phrases.length} step="1" value={phraseIndexInput || 0} onChange={handleChange}></input>
+			<h1 className={styles.h2}>{`${phraseIndex + 1}. ${phrases[phraseIndex]}`}</h1>
+			<div className={cn(styles.step, {[styles.show]: step === 1 })}>
+				<h1 className={styles.h1}>{q1}</h1>
+				<div className={styles.btnWrapper}>
+					<ActionBtn type='play' onClick={() => speakText(q1)} />
+					<ActionBtn disabled={step !== 1} type='done' onClick={() => nextStep(3)}/>
+				</div>
 			</div>
-		</div>
-		<div className={cn(styles.step,{[styles.show]: step === 2 })}>
-			<h1 className={styles.h1}>{q2}</h1>
-			<div className={styles.btnWrapper}>
-				<ActionBtn type='play' onClick={() => speakText(q2)}/>
-				<ActionBtn disabled={step !== 2} type='done' onClick={() => nextStep(3)}/>
+			<div className={cn(styles.step,{[styles.show]: step === 2 })}>
+				<h1 className={styles.h1}>{q2}</h1>
+				<div className={styles.btnWrapper}>
+					<ActionBtn type='play' onClick={() => speakText(q2)}/>
+					<ActionBtn disabled={step !== 2} type='done' onClick={() => nextStep(3)}/>
+				</div>
 			</div>
-		</div>
-		<div className={cn(styles.step,{[styles.show]: step === 3 })}>
-			<h1 className={styles.h1}>{q3}</h1>
-			<p className={styles.defenition}>{feelingsItems[feelingIndex]?.description ?? ''}</p>
-			<div className={styles.btnWrapper}>
-				<ActionBtn type='play' onClick={() => speakText(q3)}/>
-				<ActionBtn disabled={step !== 3} type='done' onClick={() => nextStep(1)}/>
+			<div className={cn(styles.step,{[styles.show]: step === 3 })}>
+				<h1 className={styles.h1}>{q3}</h1>
+				<p className={styles.defenition}>{feelingsItems[feelingIndex]?.description ?? ''}</p>
+				<div className={styles.btnWrapper}>
+					<ActionBtn type='play' onClick={() => speakText(q3)}/>
+					<ActionBtn disabled={step !== 3} type='done' onClick={() => nextStep(1)}/>
+				</div>
 			</div>
-		</div>
-		<div className={styles.footer} style={{marginTop: 'auto', padding: '20px'}}>
+			<div className={styles.footer} style={{marginTop: 'auto', padding: '20px'}}>
 				<label className={styles.autoplay}>
 					<input type="checkbox" checked={autoplay} onChange={() => setAutoplay(value => !value)}/>
 					<img src="sound.svg" alt="звук" width={20} />
 					autoplay
-					</label>
+				</label>
 				<Button onClick={no}>Не могу вспомнить<br />Пропустить вопрос</Button>
 				<Button onClick={() => navigate('/remembering/final')}>Закончить</Button>
-		</div>
-	</div></>
+			</div>
+		</div></>;
 };
