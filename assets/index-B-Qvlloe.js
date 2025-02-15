@@ -19470,6 +19470,7 @@ const Audio = () => {
     dispatch(nextQuestionIndex());
   };
   const no = async () => {
+    window.speechSynthesis.cancel();
     if (autoplay2) {
       sayThx();
     }
@@ -19480,7 +19481,7 @@ const Audio = () => {
     const url2 = "https://www.donationalerts.com/r/devforsoul";
     window.open(url2, "_blank");
   };
-  const q2 = `Что это было?`;
+  const q2 = "Что это было?";
   const speakText = (q) => {
     if (!q.trim()) return;
     const utterance = new SpeechSynthesisUtterance(q);
@@ -19490,6 +19491,7 @@ const Audio = () => {
   };
   const sayThx = () => speakText("Спасибо");
   const nextStep = (nextStep2) => {
+    window.speechSynthesis.cancel();
     if (autoplay2) {
       sayThx();
     }
@@ -19508,7 +19510,7 @@ const Audio = () => {
   reactExports.useEffect(() => {
     setQ3(`${feelingsItems[feelingIndex].question}`);
   }, [feelingIndex]);
-  const [autoplay2, setAutoplay] = reactExports.useState(false);
+  const [autoplay2, setAutoplay] = reactExports.useState(true);
   reactExports.useEffect(() => {
     if (autoplay2) {
       if (step2 === 2) {
@@ -19519,6 +19521,25 @@ const Audio = () => {
       }
     }
   }, [autoplay2, step2, phraseIndex]);
+  reactExports.useEffect(() => {
+    const handleKeyDown = (event) => {
+      if (event.key === "ArrowDown") {
+        console.log("event.key === 'ArrowDown'");
+        no();
+      } else if (event.key === "ArrowRight") {
+        console.log("event.key === 'ArrowRight'");
+        if (step2 === 1) {
+          nextStep(3);
+        } else {
+          nextStep(1);
+        }
+      }
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => {
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [step2]);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Header, { title: `Cписок: ${((_a2 = lists.find((item) => item.id === currentListId)) == null ? void 0 : _a2.theme) ?? ""}`, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$6.theme, children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("select", { className: styles$6.select, onChange: handleSelectChange, value: currentListId, children: lists.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: item.id, children: item.theme }, item.id)) }),
@@ -21119,4 +21140,4 @@ const router = createBrowserRouter([
 clientExports.createRoot(document.getElementById("root")).render(
   /* @__PURE__ */ jsxRuntimeExports.jsx(reactExports.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Provider_default, { store, children: /* @__PURE__ */ jsxRuntimeExports.jsx(RouterProvider2, { router }) }) })
 );
-//# sourceMappingURL=index-C9T61rM5.js.map
+//# sourceMappingURL=index-B-Qvlloe.js.map
