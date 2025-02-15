@@ -188,14 +188,19 @@ export const Audio = () => {
 	useEffect(() => {
 		const handleKeyDown = (event: KeyboardEvent) => {
 			if (event.key === 'ArrowDown') {
-				console.log('event.key === \'ArrowDown\'');
 				no();
 			} else if (event.key === 'ArrowRight') {
-				console.log('event.key === \'ArrowRight\'');
 				if (step === 1) {
 					nextStep(3);
 				} else {
 					nextStep(1);
+				}
+			} else if (event.key === 'ArrowUp') {
+				window.speechSynthesis.cancel();
+				if (step === 1) {
+					speakText(q1);
+				} else {
+					speakText(q3);
 				}
 			}
 		};
@@ -206,7 +211,7 @@ export const Audio = () => {
 		return () => {
 			document.removeEventListener('keydown', handleKeyDown);
 		};
-	}, [step]);
+	}, [step, q1, q3]);
 
 	return <>
 		{/* <div className={cn(styles.thxWrapper, {[styles.displayFlex]: showThx}, {[styles.fadeIn]: showFadeIn}, {[styles.fadeOut]: showFadeOut})}>
