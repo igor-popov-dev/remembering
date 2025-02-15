@@ -19524,14 +19524,19 @@ const Audio = () => {
   reactExports.useEffect(() => {
     const handleKeyDown = (event) => {
       if (event.key === "ArrowDown") {
-        console.log("event.key === 'ArrowDown'");
         no();
       } else if (event.key === "ArrowRight") {
-        console.log("event.key === 'ArrowRight'");
         if (step2 === 1) {
           nextStep(3);
         } else {
           nextStep(1);
+        }
+      } else if (event.key === "ArrowUp") {
+        window.speechSynthesis.cancel();
+        if (step2 === 1) {
+          speakText(q1);
+        } else {
+          speakText(q3);
         }
       }
     };
@@ -19539,7 +19544,7 @@ const Audio = () => {
     return () => {
       document.removeEventListener("keydown", handleKeyDown);
     };
-  }, [step2]);
+  }, [step2, q1, q3]);
   return /* @__PURE__ */ jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, { children: [
     /* @__PURE__ */ jsxRuntimeExports.jsx(Header, { title: `Cписок: ${((_a2 = lists.find((item) => item.id === currentListId)) == null ? void 0 : _a2.theme) ?? ""}`, children: /* @__PURE__ */ jsxRuntimeExports.jsxs("div", { className: styles$6.theme, children: [
       /* @__PURE__ */ jsxRuntimeExports.jsx("select", { className: styles$6.select, onChange: handleSelectChange, value: currentListId, children: lists.map((item) => /* @__PURE__ */ jsxRuntimeExports.jsx("option", { value: item.id, children: item.theme }, item.id)) }),
@@ -21140,4 +21145,4 @@ const router = createBrowserRouter([
 clientExports.createRoot(document.getElementById("root")).render(
   /* @__PURE__ */ jsxRuntimeExports.jsx(reactExports.StrictMode, { children: /* @__PURE__ */ jsxRuntimeExports.jsx(Provider_default, { store, children: /* @__PURE__ */ jsxRuntimeExports.jsx(RouterProvider2, { router }) }) })
 );
-//# sourceMappingURL=index-B-Qvlloe.js.map
+//# sourceMappingURL=index-CBYybhbR.js.map
